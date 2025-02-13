@@ -1,12 +1,17 @@
 {
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
     "namedInputs": {
-        "default": ["{projectRoot}/**/*", "{workspaceRoot}/ghost/tsconfig.json"]
+        "default": [
+            "{projectRoot}/**/*",
+            "{workspaceRoot}/ghost/tsconfig.json"
+        ]
     },
     "parallel": 4,
     "targetDefaults": {
         "build": {
-            "dependsOn": ["^build"],
+            "dependsOn": [
+                "^build"
+            ],
             "inputs": [
                 {
                     "env": "GHOST_CDN_URL"
@@ -23,9 +28,16 @@
             "cache": true
         },
         "build:ts": {
-            "dependsOn": ["^build:ts"],
-            "inputs": ["default", "^default"],
-            "outputs": ["{projectRoot}/build"],
+            "dependsOn": [
+                "^build:ts"
+            ],
+            "inputs": [
+                "default",
+                "^default"
+            ],
+            "outputs": [
+                "{projectRoot}/build"
+            ],
             "cache": true
         },
         "lint": {
@@ -35,9 +47,12 @@
             "cache": true
         },
         "test:unit": {
-            "dependsOn": ["^build:ts"],
+            "dependsOn": [
+                "^build:ts"
+            ],
             "cache": true
         }
     },
-    "cacheDirectory": ".nxcache"
+    "cacheDirectory": ".nxcache",
+    "nxCloudId": "67adec70c861dad7397e9862"
 }
